@@ -9,9 +9,10 @@ Basic project that shows how to setup a project with the following tools:
 - Pslam
 - Phpstan
 
-All above are run by phing.
+All above are run by Phing.
 
-CircleCI v2.0 setup
+
+CI is done in CircleCI using v2.0.
 
 
 

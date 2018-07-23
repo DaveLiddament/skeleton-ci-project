@@ -1,4 +1,5 @@
 .idea
 .vagrant
+.php_cs.cache
 vendor
 *.log

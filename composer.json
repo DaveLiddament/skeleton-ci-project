@@ -1,0 +1,56 @@
+{
+  "name" : "dave-liddament/skeleton-project",
+  "type": "project",
+  "description": "Demonstrates setup of a skeleton project with various code quality tools installed.",
+  "license" : "MIT",
+  "authors" : [
+    {
+      "name" : "Dave Liddament",
+      "email" : "daveliddament@gmail.com"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "php": ">=7.2"
+  },
+  "require-dev": {
+    "jakub-onderka/php-parallel-lint": "~0.9",
+    "jakub-onderka/php-var-dump-check": "~0.2",    
+    "friendsofphp/php-cs-fixer": "^2.0",
+    "phing/phing": "2.*",
+    "phpstan/phpstan": "^0.10.2",
+    "phpunit/phpunit": "^7.0",
+    "vimeo/psalm": "^2.0.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "SkeletonProject\\" : "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SkeletonProject\\Tests\\" : "tests/"
+    }
+  },
+  "scripts": {
+    "ci" : [
+      "@composer-validate",
+      "@lint",
+      "@var-dump-checker",
+      "@cs",
+      "@psalm",
+      "@phpstan",
+      "@test"
+    ],
+    "composer-validate" : "@composer validate --no-check-all --strict",
+    "lint" : "parallel-lint src tests",
+    "var-dump-checker" : "var-dump-check --ladybug --no-colors src",
+    "cs" : "php-cs-fixer fix -v --dry-run",
+    "cs-fix" : "php-cs-fixer fix -v",
+    "psalm" : "psalm",
+    "phpstan" : "phpstan analyse -n --no-progress",
+    "test" : "phpunit"
+  }
+}
