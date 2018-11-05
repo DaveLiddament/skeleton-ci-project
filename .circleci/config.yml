@@ -13,7 +13,7 @@ jobs:
         - v1-dependencies-{{ checksum "composer.lock" }}
         - v1-dependencies-
 
-    - run: composer install -n --prefer-dist
+    - run: composer install -n --prefer-dist --no-scripts 
 
     - save_cache:
         key: v1-dependencies-{{ checksum "composer.lock" }}
