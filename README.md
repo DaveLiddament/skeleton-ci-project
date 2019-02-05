@@ -59,3 +59,8 @@ or
 ## CircleCI 2.0
 
 This can run on [CircleCI](https://circleci.com/). See config file `.circleci/config.yml`.
+
+
+## Gitlab 
+
+This can run on [Gitlab's CI](https://gitlab.com). See config file `.gitlab-ci.yml`. Based from [this](https://gitlab.com/gitlab-examples/php/blob/master/.gitlab-ci.yml) example. 
